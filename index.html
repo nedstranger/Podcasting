@@ -1,771 +1,677 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ned Mortimer — Podcast Production for Founders</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;700&family=Montserrat:wght@300;400;500;600&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ned Mortimer — Podcast Production for Founders</title>
+  <meta name="description" content="Founder-led interview podcasts that build authority and win high-value clients. End-to-end podcast production for business owners." />
 
-        :root {
-            /* LIGHT THEME */
-            --font-serif: 'Cormorant Garamond', serif;
-            --font-sans: 'Montserrat', sans-serif;
-            --color-light: #1A1A1A; /* Main Text / Dark Accent */
-            --color-dark: #F4F4F4; /* Main Background / Light Accent */
-            --color-accent: #B0A175; /* Gold/Bronze Accent */
-        }
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;700&family=Montserrat:wght@300;400;500;600&display=swap');
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+    :root {
+      /* LIGHT THEME */
+      --font-serif: 'Cormorant Garamond', serif;
+      --font-sans: 'Montserrat', sans-serif;
+      --color-light: #1A1A1A; /* Main Text / Dark Accent */
+      --color-dark: #F4F4F4;  /* Main Background / Light Accent */
+      --color-accent: #B0A175; /* Gold/Bronze Accent */
+    }
 
-        body {
-            font-family: var(--font-serif);
-            background-color: var(--color-dark);
-            color: var(--color-light);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
+    body {
+      font-family: var(--font-serif);
+      background-color: var(--color-dark);
+      color: var(--color-light);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-        /* --- Header & Navigation --- */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(244, 244, 244, 0.9);
-            backdrop-filter: blur(5px);
-            transition: background 0.3s ease;
-            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
-        }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
 
-        .logo {
-            font-family: var(--font-serif);
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 500;
-            color: var(--color-light);
-        }
+    /* --- Header & Navigation --- */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(244, 244, 244, 0.9);
+      backdrop-filter: blur(5px);
+      transition: background 0.3s ease;
+      box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+    }
 
-        nav a {
-            color: var(--color-light);
-            text-decoration: none;
-            margin-left: 1rem;
-            font-family: var(--font-sans);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s ease;
-        }
+    .logo {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 500;
+      color: var(--color-light);
+      white-space: nowrap;
+    }
 
-        nav a:hover {
-            color: var(--color-accent);
-        }
+    nav a {
+      color: var(--color-light);
+      text-decoration: none;
+      margin-left: 1rem;
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
+    }
 
-        /* --- Hero Section --- */
-        .hero {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            overflow: hidden;
-            color: var(--color-dark);
-        }
+    nav a:hover {
+      color: var(--color-accent);
+    }
 
-        .hero-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-            filter: brightness(0.75);
-        }
+    /* --- Sections --- */
+    section {
+      padding: 6rem 0;
+    }
 
-        .hero-content h1 {
-            font-family: var(--font-serif);
-            font-size: 5rem;
-            font-weight: 300;
-            line-height: 1;
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-        }
+    /* First section needs top padding because header is fixed */
+    #about {
+      padding-top: 10rem;
+    }
 
-        .hero-content p {
-            font-family: var(--font-sans);
-            font-size: 1.05rem;
-            font-weight: 400;
-            margin-top: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 3.5rem;
+      font-weight: 300;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
 
-        /* --- Sections --- */
-        section {
-            padding: 6rem 0;
-        }
+    .section-subtitle {
+      font-family: var(--font-sans);
+      font-size: 1.1rem;
+      font-weight: 400;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--color-accent);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
 
-        #about {
-            padding-top: 10rem;
-        }
+    /* --- About Section --- */
+    #about .bio-flex {
+      display: flex;
+      gap: 4rem;
+      align-items: center;
+    }
 
-        .section-title {
-            font-family: var(--font-serif);
-            font-size: 3.5rem;
-            font-weight: 300;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
+    #about .bio-flex-img {
+      flex: 1;
+    }
 
-        .section-subtitle {
-            font-family: var(--font-sans);
-            font-size: 1.1rem;
-            font-weight: 400;
-            text-align: center;
-            margin-bottom: 4rem;
-            color: var(--color-accent);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
+    #about .bio-flex-img img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      display: block;
+    }
 
-        /* --- Showcase blocks --- */
-        .work-showcase {
-            display: flex;
-            gap: 4rem;
-            margin-bottom: 6rem;
-            align-items: flex-start;
-        }
+    #about .bio-flex-text {
+      flex: 2;
+    }
 
-        .work-showcase:nth-child(even) {
-            flex-direction: row-reverse;
-        }
+    #about .bio-flex-text h3 {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
 
-        .work-image-placeholder {
-            flex: 1;
-            max-width: 45%;
-            aspect-ratio: 1 / 1;
-            background-color: rgba(26, 26, 26, 0.05);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: var(--font-sans);
-            font-size: 0.9rem;
-            color: rgba(26, 26, 26, 0.4);
-            border-radius: 4px;
-            overflow: hidden;
-        }
+    #about .bio-flex-text p {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
 
-        .work-image-placeholder img{
-            width:100%;
-            height:100%;
-            object-fit:cover;
-            display:block;
-        }
+    /* --- Services (compact icon list) --- */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.25rem;
+    }
 
-        .work-content {
-            flex: 1.5;
-            padding: 0 2rem;
-        }
+    .service-card {
+      border: 1px solid rgba(26, 26, 26, 0.12);
+      background: rgba(255, 255, 255, 0.65);
+      border-radius: 8px;
+      padding: 1.6rem 1.4rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
 
-        .work-content h3 {
-            font-family: var(--font-serif);
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
+    .service-icon {
+      width: 54px;
+      height: 54px;
+      flex: 0 0 54px;
+      border-radius: 10px;
+      background: rgba(176, 161, 117, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
 
-        .work-content p {
-            font-family: var(--font-sans);
-            font-size: 1rem;
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-            color: var(--color-light);
-        }
+    .service-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
-        .gallery-placeholder {
-            height: 200px;
-            background-color: rgba(26, 26, 26, 0.03);
-            border: 1px solid rgba(26, 26, 26, 0.1);
-            margin-bottom: 2rem;
-            border-radius: 4px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: var(--font-sans);
-            font-size: 0.8rem;
-            color: rgba(26, 26, 26, 0.3);
-            overflow:hidden;
-        }
-        .gallery-placeholder img{
-            width:100%;
-            height:100%;
-            object-fit:cover;
-            display:block;
-        }
+    .service-text h3 {
+      font-family: var(--font-serif);
+      font-size: 1.55rem;
+      margin-bottom: 0.35rem;
+      line-height: 1.1;
+    }
 
-        /* --- About Section --- */
-        #about .bio-flex {
-            display: flex;
-            gap: 4rem;
-            align-items: center;
-        }
+    .service-text p {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: rgba(26, 26, 26, 0.85);
+      margin: 0;
+    }
 
-        #about .bio-flex-img {
-            flex: 1;
-        }
+    .services-cta {
+      text-align: center;
+      margin-top: 2.5rem;
+    }
 
-        #about .bio-flex-img img {
-            width: 100%;
-            height: auto;
-            border-radius: 4px;
-        }
+    /* --- Process Section (simple) --- */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin-top: 2.25rem;
+    }
 
-        #about .bio-flex-text {
-            flex: 2;
-        }
+    .process-step {
+      border: 1px solid rgba(26, 26, 26, 0.12);
+      background: rgba(255, 255, 255, 0.65);
+      border-radius: 8px;
+      padding: 1.4rem 1.2rem;
+    }
 
-        #about .bio-flex-text h3 {
-            font-family: var(--font-serif);
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
+    .process-step .kicker {
+      font-family: var(--font-sans);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.75rem;
+      color: var(--color-accent);
+      margin-bottom: 0.5rem;
+    }
 
-        #about .bio-flex-text p {
-            font-family: var(--font-sans);
-            font-size: 1rem;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
+    .process-step h3 {
+      font-family: var(--font-serif);
+      font-size: 1.7rem;
+      margin-bottom: 0.75rem;
+    }
 
-        /* --- Contact Form Section --- */
-        #contact {
-            background-color: var(--color-dark);
-        }
+    .process-step p {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: rgba(26, 26, 26, 0.85);
+    }
 
-        .contact-form {
-            margin-top: 2rem;
-            text-align: center;
-            padding: 3rem 0;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        }
+    /* --- Contact Form Section --- */
+    #contact {
+      background-color: var(--color-dark);
+    }
 
-        .contact-form form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            max-width: 520px;
-            margin: 0 auto;
-        }
+    .contact-form {
+      margin-top: 2rem;
+      text-align: center;
+      padding: 3rem 0;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
 
-        .contact-form label {
-            display: block;
-            font-family: var(--font-sans);
-            font-size: 0.9rem;
-            color: var(--color-light);
-            text-align: left;
-            opacity: 0.7;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
 
-        .contact-form input, .contact-form textarea, .contact-form select {
-            background: none;
-            border: none;
-            border-bottom: 1px solid rgba(26, 26, 26, 0.2);
-            color: var(--color-light);
-            padding: 0.75rem 0.25rem;
-            font-family: var(--font-sans);
-            font-size: 1rem;
-            width: 100%;
-            transition: border-color 0.3s;
-            resize: vertical;
-        }
+    .contact-form label {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      color: var(--color-light);
+      text-align: left;
+      opacity: 0.7;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.35rem;
+    }
 
-        .contact-form textarea {
-            border: 1px solid rgba(26, 26, 26, 0.2);
-            padding: 0.75rem;
-            min-height: 140px;
-        }
+    .contact-form input, .contact-form textarea, .contact-form select {
+      background: none;
+      border: none;
+      border-bottom: 1px solid rgba(26, 26, 26, 0.2);
+      color: var(--color-light);
+      padding: 0.75rem 0.25rem;
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      width: 100%;
+      transition: border-color 0.3s;
+      resize: vertical;
+    }
 
-        .contact-form select {
-            border: 1px solid rgba(26, 26, 26, 0.2);
-            padding: 0.75rem;
-            appearance: none;
-            background-color: var(--color-dark);
-            color: var(--color-light);
-        }
+    .contact-form textarea {
+      border: 1px solid rgba(26, 26, 26, 0.2);
+      padding: 0.75rem;
+      min-height: 140px;
+    }
 
-        .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
-            outline: none;
-            border-color: var(--color-accent);
-        }
+    .contact-form select {
+      border: 1px solid rgba(26, 26, 26, 0.2);
+      padding: 0.75rem;
+      appearance: none;
+      background-color: var(--color-dark);
+      color: var(--color-light);
+    }
 
-        .contact-form button {
-            background: var(--color-light);
-            color: var(--color-dark);
-            border: none;
-            padding: 1rem 2rem;
-            font-family: var(--font-sans);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.85rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            border-radius: 4px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
+    .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
+      outline: none;
+      border-color: var(--color-accent);
+    }
 
-        .contact-form button:hover {
-            background-color: var(--color-accent);
-            color: var(--color-light);
-        }
+    .contact-form button {
+      background: var(--color-light);
+      color: var(--color-dark);
+      border: none;
+      padding: 1rem 2rem;
+      font-family: var(--font-sans);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      border-radius: 4px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
 
-        /* --- Buttons --- */
-        .button {
-            position: relative;
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            border: 1px solid var(--color-dark);
-            color: var(--color-dark);
-            text-decoration: none;
-            font-family: var(--font-sans);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.85rem;
-            overflow: hidden;
-            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-            border-radius: 4px;
-        }
-        .hero .button {
-            border: 2px solid var(--color-dark);
-            color: var(--color-dark);
-            margin-top: 2rem;
-            background-color: transparent;
-        }
-        .hero .button:hover {
-            background-color: var(--color-dark);
-            color: var(--color-light);
-        }
-        .work-content .button {
-            border: 1px solid var(--color-light);
-            color: var(--color-light);
-            background-color: transparent;
-        }
-        .work-content .button:hover {
-            background-color: var(--color-accent);
-            border-color: var(--color-accent);
-            color: var(--color-dark);
-        }
+    .contact-form button:hover {
+      background-color: var(--color-accent);
+      color: var(--color-light);
+    }
 
-        /* --- Footer --- */
-        footer {
-            padding: 4rem 0;
-            text-align: center;
-            background-color: #e8e8e8;
-            border-top: 1px solid rgba(26, 26, 26, 0.1);
-        }
+    /* --- Buttons --- */
+    .button {
+      position: relative;
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      border: 1px solid var(--color-dark);
+      color: var(--color-dark);
+      text-decoration: none;
+      font-family: var(--font-sans);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.85rem;
+      overflow: hidden;
+      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+      border-radius: 4px;
+      background-color: transparent;
+      cursor: pointer;
+    }
 
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
+    .button:hover {
+      background-color: var(--color-dark);
+      color: var(--color-light);
+      border-color: var(--color-dark);
+    }
 
-        .footer-links a {
-            font-family: var(--font-sans);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--color-light);
-            text-decoration: none;
-            margin: 0.5rem 1rem;
-            opacity: 0.7;
-            transition: opacity 0.3s;
-        }
+    /* --- Footer --- */
+    footer {
+      padding: 4rem 0;
+      text-align: center;
+      background-color: #e8e8e8;
+      border-top: 1px solid rgba(26, 26, 26, 0.1);
+    }
 
-        .footer-links a:hover {
-            opacity: 1;
-            color: var(--color-accent);
-        }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
 
-        footer p {
-            font-family: var(--font-sans);
-            font-size: 0.8rem;
-            opacity: 0.6;
-            color: var(--color-light);
-        }
+    .footer-links a {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--color-light);
+      text-decoration: none;
+      margin: 0.5rem 1rem;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
 
-        hr {
-            border: none;
-            height: 1px;
-            background: rgba(26, 26, 26, 0.1);
-            margin: 4rem auto;
-            width: 70%;
-        }
+    .footer-links a:hover {
+      opacity: 1;
+      color: var(--color-accent);
+    }
 
-        /* --- Services (compact icon list) --- */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.5rem;
-    margin-top: 2.5rem;
-}
+    footer p {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      opacity: 0.6;
+      color: var(--color-light);
+    }
 
-.service-card {
-    border: 1px solid rgba(26, 26, 26, 0.12);
-    background: rgba(255, 255, 255, 0.65);
-    border-radius: 8px;
-    padding: 1.6rem 1.4rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-}
+    hr {
+      border: none;
+      height: 1px;
+      background: rgba(26, 26, 26, 0.1);
+      margin: 0 auto;
+      width: 70%;
+    }
 
-.service-icon {
-    width: 54px;
-    height: 54px;
-    flex: 0 0 54px;
-    border-radius: 10px;
-    background: rgba(176, 161, 117, 0.12);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
+    /* --- Responsive --- */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      #about .bio-flex {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: flex-start;
+      }
+      #about .bio-flex-text { flex: 1; }
+    }
 
-.service-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.service-text h3 {
-    font-family: var(--font-serif);
-    font-size: 1.55rem;
-    margin-bottom: 0.35rem;
-}
-
-.service-text p {
-    font-family: var(--font-sans);
-    font-size: 0.95rem;
-    line-height: 1.65;
-    color: rgba(26, 26, 26, 0.85);
-    margin: 0;
-}
-
-.services-cta {
-    text-align: center;
-    margin-top: 2.5rem;
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-    .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-@media (max-width: 768px) {
-    .services-grid { grid-template-columns: 1fr; }
-    .service-card { padding: 1.4rem 1.2rem; }
-}
-
-
-        /* --- Responsive --- */
-        @media (max-width: 1024px) {
-            .work-showcase {
-                flex-direction: column;
-                gap: 2rem;
-            }
-            .work-showcase:nth-child(even) {
-                flex-direction: column;
-            }
-            .work-image-placeholder {
-                max-width: 100%;
-                width: 100%;
-            }
-            .work-content {
-                padding: 0;
-            }
-        }
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 3rem;
-                letter-spacing: 3px;
-            }
-            .hero-content p {
-                font-size: 1rem;
-            }
-            .section-title {
-                font-size: 2.5rem;
-            }
-            header {
-                padding: 1rem 1.5rem;
-            }
-            nav {
-                display: none;
-            }
-            .footer-links a {
-                margin: 0.5rem 0.8rem;
-            }
-        }
-    </style>
+    @media (max-width: 768px) {
+      .section-title { font-size: 2.5rem; }
+      header { padding: 1rem 1.5rem; }
+      nav { display: none; }
+      .services-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr; }
+      .footer-links a { margin: 0.5rem 0.8rem; }
+    }
+  </style>
 </head>
+
 <body>
+  <header>
+    <div class="logo">Ned Mortimer</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">What I Produce</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Book a call</a>
+    </nav>
+  </header>
 
-    <header>
-        <div class="logo">Ned Mortimer</div>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#process">Process</a>
-            <a href="#contact">Book a call</a>
-        </nav>
-    </header>
+  <!-- ABOUT -->
+  <section id="about" class="container">
+    <h2 class="section-title">Podcast production for business owners</h2>
+    <p class="section-subtitle">A branded interview show that positions you as the obvious choice</p>
 
-    <!-- 1. HERO -->
-    <section class="hero" id="home">
-        <!-- Replace with a GitHub-hosted image URL, e.g. /assets/images/hero.jpg -->
-        <img src="REPLACE_WITH_GITHUB_HOSTED_HERO_IMAGE" alt="Podcast studio background" class="hero-image">
-        <div class="hero-content">
-            <h1>Authority, on demand.</h1>
-            <p>Founder-led interview podcasts that win high-value clients</p>
-            <a href="#contact" class="button">Book a 15-min fit call &rarr;</a>
+    <div class="bio-flex">
+      <div class="bio-flex-img">
+        <!-- Replace with a GitHub-hosted headshot -->
+        <img src="REPLACE_WITH_GITHUB_HOSTED_HEADSHOT" alt="Ned Mortimer headshot">
+      </div>
+
+      <div class="bio-flex-text">
+        <h3>End-to-end. Flat fee. No hassle.</h3>
+        <p>
+          If you sell a high-value product or service to a defined audience, a podcast is one of the fastest ways
+          to build trust at scale. I produce founder-led interview shows that attract ideal clients and partners,
+          while creating a library of reusable content for your website, LinkedIn and email list.
+        </p>
+        <p>
+          I handle the full workflow: positioning, guest outreach templates, remote recording setup, editing,
+          publishing to Spotify/Apple/YouTube, and optional short clips. You show up for the conversation — I do the rest.
+        </p>
+        <p>
+          <strong>No-risk:</strong> if the first episode isn’t publishable to your standard, you don’t release it and you don’t continue.
+        </p>
+        <div style="margin-top: 1.5rem;">
+          <a href="#contact" class="button">Book a 15-min fit call &rarr;</a>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- 2. ABOUT -->
-    <section id="about" class="container">
-        <h2 class="section-title">Podcast production for business owners</h2>
-        <p class="section-subtitle">A branded show that positions you as the obvious choice</p>
-        <div class="bio-flex">
-            <div class="bio-flex-img">
-                <!-- Replace with a GitHub-hosted headshot -->
-                <img src="REPLACE_WITH_GITHUB_HOSTED_HEADSHOT" alt="Ned Mortimer headshot">
-            </div>
-            <div class="bio-flex-text">
-                <h3>End-to-end. Flat fee. No hassle.</h3>
-                <p>
-                    If you sell a high-value product or service to a defined audience, a podcast is one of the fastest ways
-                    to build trust at scale. I produce founder-led interview shows that attract ideal clients and partners,
-                    while creating a library of reusable content for your website, LinkedIn and email list.
-                </p>
-                <p>
-                    I handle the full workflow: positioning, guest outreach templates, remote recording setup, editing,
-                    publishing to Spotify/Apple/YouTube, and optional short clips. You show up for the conversation — I do the rest.
-                </p>
-                <p>
-                    <strong>No-risk:</strong> if the first episode isn’t publishable to your standard, you don’t release it and you don’t continue.
-                </p>
-            </div>
-        </div>
-    </section>
+  <hr>
 
-    <hr>
-
-   <section id="services" class="container">
+  <!-- SERVICES (COMPACT) -->
+  <section id="services" class="container">
     <h2 class="section-title">What I Produce</h2>
-    <p class="section-subtitle">Done-for-you podcast production, built for authority and inbound</p>
+    <p class="section-subtitle">Done-for-you production, built for authority and inbound</p>
 
     <div class="services-grid">
-        <div class="service-card">
-            <div class="service-icon">
-                <!-- Animated icon placeholder (replace URL) -->
-                <img src="REPLACE_WITH_ANIMATED_ICON_URL_SHOW_STRATEGY" alt="Show strategy icon">
-            </div>
-            <div class="service-text">
-                <h3>Show Strategy</h3>
-                <p>Angle, audience, episode structure, and a guest pipeline designed to attract your ideal buyers.</p>
-            </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <!-- Animated icon placeholder (GIF/WebP recommended for <img>) -->
+          <img src="REPLACE_WITH_ANIMATED_ICON_URL_STRATEGY" alt="Show strategy icon">
         </div>
+        <div class="service-text">
+          <h3>Show Strategy</h3>
+          <p>Angle, audience, episode structure, and a guest pipeline that attracts the right buyers.</p>
+        </div>
+      </div>
 
-        <div class="service-card">
-            <div class="service-icon">
-                <img src="REPLACE_WITH_ANIMATED_ICON_URL_RECORDING" alt="Recording setup icon">
-            </div>
-            <div class="service-text">
-                <h3>Remote Recording</h3>
-                <p>Simple setup for you and your guests, plus live troubleshooting so sessions run smoothly.</p>
-            </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <img src="REPLACE_WITH_ANIMATED_ICON_URL_RECORDING" alt="Recording icon">
         </div>
+        <div class="service-text">
+          <h3>Remote Recording</h3>
+          <p>Simple setup for you and guests, plus live troubleshooting so sessions run smoothly.</p>
+        </div>
+      </div>
 
-        <div class="service-card">
-            <div class="service-icon">
-                <img src="REPLACE_WITH_ANIMATED_ICON_URL_EDITING" alt="Editing icon">
-            </div>
-            <div class="service-text">
-                <h3>Premium Editing</h3>
-                <p>Clean, tight narrative edits: remove filler, mistakes, dead air; consistent loudness and finish.</p>
-            </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <img src="REPLACE_WITH_ANIMATED_ICON_URL_EDITING" alt="Editing icon">
         </div>
+        <div class="service-text">
+          <h3>Premium Editing</h3>
+          <p>Clean narrative edits, consistent loudness, and a professional finish.</p>
+        </div>
+      </div>
 
-        <div class="service-card">
-            <div class="service-icon">
-                <img src="REPLACE_WITH_ANIMATED_ICON_URL_PUBLISHING" alt="Publishing icon">
-            </div>
-            <div class="service-text">
-                <h3>Publishing</h3>
-                <p>Spotify/Apple/YouTube publishing with titles, show notes, timestamps, and clean metadata.</p>
-            </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <img src="REPLACE_WITH_ANIMATED_ICON_URL_PUBLISHING" alt="Publishing icon">
         </div>
+        <div class="service-text">
+          <h3>Publishing</h3>
+          <p>Spotify/Apple/YouTube publishing with titles, show notes, and clean metadata.</p>
+        </div>
+      </div>
 
-        <div class="service-card">
-            <div class="service-icon">
-                <img src="REPLACE_WITH_ANIMATED_ICON_URL_CLIPS" alt="Clips icon">
-            </div>
-            <div class="service-text">
-                <h3>Clips for LinkedIn</h3>
-                <p>Short, business-friendly clips with captions and branded templates (optional add-on).</p>
-            </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <img src="REPLACE_WITH_ANIMATED_ICON_URL_CLIPS" alt="Clips icon">
         </div>
+        <div class="service-text">
+          <h3>Clips for LinkedIn</h3>
+          <p>Short clips with captions and branded templates (optional add-on).</p>
+        </div>
+      </div>
 
-        <div class="service-card">
-            <div class="service-icon">
-                <img src="REPLACE_WITH_ANIMATED_ICON_URL_GUESTS" alt="Guest outreach icon">
-            </div>
-            <div class="service-text">
-                <h3>Guest Outreach Kit</h3>
-                <p>Battle-tested invite templates + a system to keep your guest pipeline full (optional add-on).</p>
-            </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <img src="REPLACE_WITH_ANIMATED_ICON_URL_OUTREACH" alt="Outreach icon">
         </div>
+        <div class="service-text">
+          <h3>Guest Outreach Kit</h3>
+          <p>Invite templates + a simple system to keep your guest pipeline full.</p>
+        </div>
+      </div>
     </div>
 
     <div class="services-cta">
-        <a href="#contact" class="button">Book a 15-min fit call &rarr;</a>
+      <a href="#contact" class="button">Book a 15-min fit call &rarr;</a>
     </div>
-</section>
+  </section>
 
-    <hr>
+  <hr>
 
-    <!-- 4. PROCESS -->
-    <section id="process" class="container">
-        <h2 class="section-title">How it works</h2>
-        <p class="section-subtitle">Simple, repeatable, and predictable</p>
+  <!-- PROCESS -->
+  <section id="process" class="container">
+    <h2 class="section-title">How it works</h2>
+    <p class="section-subtitle">Simple, repeatable, and predictable</p>
 
-        <div class="work-showcase">
-            <div class="work-image-placeholder">
-                <img src="REPLACE_WITH_GITHUB_HOSTED_PROCESS_IMAGE" alt="Process placeholder">
-            </div>
-            <div class="work-content">
-                <h3>1) Positioning → 2) Recording → 3) Publish → 4) Repurpose</h3>
-                <p><strong>Week 1:</strong> define the show angle, target listener, guest list criteria, and episode structure.</p>
-                <p><strong>Weeks 2–4:</strong> record (remote), I edit and publish, and you get assets ready to share.</p>
-                <p><strong>Ongoing:</strong> episodes compound as an authority library on your site and social channels.</p>
-                <a href="#contact" class="button">Book the fit call &rarr;</a>
-            </div>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="kicker">Step 1</div>
+        <h3>Positioning</h3>
+        <p>Define your audience, offer, show angle, and episode format so the podcast drives the right inbound.</p>
+      </div>
+
+      <div class="process-step">
+        <div class="kicker">Step 2</div>
+        <h3>Record</h3>
+        <p>Remote recording with a simple setup. You show up for the conversation; I handle the rest.</p>
+      </div>
+
+      <div class="process-step">
+        <div class="kicker">Step 3</div>
+        <h3>Edit</h3>
+        <p>Tight narrative edit, clean mix, consistent loudness, and a premium final master.</p>
+      </div>
+
+      <div class="process-step">
+        <div class="kicker">Step 4</div>
+        <h3>Publish</h3>
+        <p>Upload, show notes, timestamps, and optional clips—ready to share across channels.</p>
+      </div>
+    </div>
+
+    <div class="services-cta">
+      <a href="#contact" class="button">Book the fit call &rarr;</a>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- CONTACT -->
+  <section id="contact" class="container">
+    <h2 class="section-title">Book a call</h2>
+
+    <div class="contact-form">
+      <p style="font-family: var(--font-sans); font-size: 1rem; margin-bottom: 2rem; color: var(--color-light); padding: 0 1.25rem;">
+        Tell me what you sell, who you sell it to, and what you want the podcast to achieve. I’ll reply with a clear recommendation.
+      </p>
+
+      <!-- Option: Web3Forms (replace key) -->
+      <form action="https://api.web3forms.com/submit" method="post">
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE">
+        <input type="hidden" name="subject" value="New inquiry from NedMortimer.com">
+
+        <div>
+          <label for="full_name">Full Name</label>
+          <input type="text" id="full_name" name="Full Name" required>
         </div>
-    </section>
 
-    <hr>
-
-    <!-- 5. CONTACT -->
-    <section id="contact" class="container">
-        <h2 class="section-title">Book a call</h2>
-        <div class="contact-form">
-            <p style="font-family: var(--font-sans); font-size: 1rem; margin-bottom: 2rem; color: var(--color-light);">
-                Tell me what you sell, who you sell it to, and what you want the podcast to achieve. I’ll reply with a clear recommendation.
-            </p>
-
-            <!-- Option A: Web3Forms (replace key) -->
-            <form action="https://api.web3forms.com/submit" method="post">
-                <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE">
-                <input type="hidden" name="subject" value="New inquiry from NedMortimer.com">
-
-                <div>
-                    <label for="full_name">Full Name</label>
-                    <input type="text" id="full_name" name="Full Name" required>
-                </div>
-                <div>
-                    <label for="company_org">Company / Website</label>
-                    <input type="text" id="company_org" name="Company/Website" required>
-                </div>
-                <div>
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="Email" required>
-                </div>
-                <div>
-                    <label for="inquiry_type">What do you want?</label>
-                    <select id="inquiry_type" name="Goal" required>
-                        <option value="" disabled selected>-- Select One --</option>
-                        <option value="Launch">Launch a podcast from scratch</option>
-                        <option value="Produce">Produce/edit an existing show</option>
-                        <option value="Repurpose">Repurpose episodes into clips</option>
-                        <option value="Unsure">Not sure yet</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="message">What do you sell and who is the ideal client?</label>
-                    <textarea id="message" name="Message" rows="4" required></textarea>
-                </div>
-                <button type="submit">Send</button>
-            </form>
-
-            <p style="font-family: var(--font-sans); font-size: 0.9rem; margin-top: 1.5rem; opacity: 0.75;">
-                Prefer email? <a href="mailto:hello@nedmortimer.com">hello@nedmortimer.com</a>
-            </p>
+        <div>
+          <label for="company_org">Company / Website</label>
+          <input type="text" id="company_org" name="Company/Website" required>
         </div>
-    </section>
 
-    <!-- 6. FOOTER -->
-    <footer>
-        <div class="footer-links">
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#process">Process</a>
-            <a href="#contact">Contact</a>
+        <div>
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="Email" required>
         </div>
-        <p>&copy; 2026 Ned Mortimer. All rights reserved.</p>
-    </footer>
 
-    <script>
-        // Simple observer for fade-in effect (kept from your original)
-        document.addEventListener("DOMContentLoaded", function() {
-            const sections = document.querySelectorAll('section, hr');
+        <div>
+          <label for="inquiry_type">What do you want?</label>
+          <select id="inquiry_type" name="Goal" required>
+            <option value="" disabled selected>-- Select One --</option>
+            <option value="Launch">Launch a podcast from scratch</option>
+            <option value="Produce">Produce/edit an existing show</option>
+            <option value="Repurpose">Repurpose episodes into clips</option>
+            <option value="Unsure">Not sure yet</option>
+          </select>
+        </div>
 
-            const sectionObserverOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
+        <div>
+          <label for="message">What do you sell and who is the ideal client?</label>
+          <textarea id="message" name="Message" rows="4" required></textarea>
+        </div>
 
-            const sectionObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, sectionObserverOptions);
+        <button type="submit">Send</button>
+      </form>
 
-            sections.forEach(section => {
-                section.style.opacity = 0;
-                section.style.transform = 'translateY(20px)';
-                section.style.transition = 'opacity 1s ease, transform 1s ease';
-                sectionObserver.observe(section);
-            });
+      <p style="font-family: var(--font-sans); font-size: 0.9rem; margin-top: 1.5rem; opacity: 0.75; padding: 0 1.25rem;">
+        Prefer email? <a href="mailto:hello@nedmortimer.com">hello@nedmortimer.com</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#services">What I Produce</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <p>&copy; 2026 Ned Mortimer. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Fade-in effect on scroll
+    document.addEventListener("DOMContentLoaded", function () {
+      const sections = document.querySelectorAll('section, hr');
+
+      const sectionObserverOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+          }
         });
-    </script>
+      }, sectionObserverOptions);
+
+      sections.forEach(section => {
+        section.style.opacity = 0;
+        section.style.transform = 'translateY(20px)';
+        section.style.transition = 'opacity 1s ease, transform 1s ease';
+        sectionObserver.observe(section);
+      });
+    });
+  </script>
 </body>
 </html>
