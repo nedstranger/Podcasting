@@ -426,6 +426,73 @@
             width: 70%;
         }
 
+        /* --- Services (compact icon list) --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.service-card {
+    border: 1px solid rgba(26, 26, 26, 0.12);
+    background: rgba(255, 255, 255, 0.65);
+    border-radius: 8px;
+    padding: 1.6rem 1.4rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.service-icon {
+    width: 54px;
+    height: 54px;
+    flex: 0 0 54px;
+    border-radius: 10px;
+    background: rgba(176, 161, 117, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.service-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.service-text h3 {
+    font-family: var(--font-serif);
+    font-size: 1.55rem;
+    margin-bottom: 0.35rem;
+}
+
+.service-text p {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: rgba(26, 26, 26, 0.85);
+    margin: 0;
+}
+
+.services-cta {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 768px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .service-card { padding: 1.4rem 1.2rem; }
+}
+
+
         /* --- Responsive --- */
         @media (max-width: 1024px) {
             .work-showcase {
@@ -518,68 +585,77 @@
 
     <hr>
 
-    <!-- 3. SERVICES -->
-    <section id="services" class="container">
-        <h2 class="section-title">What I produce</h2>
+   <section id="services" class="container">
+    <h2 class="section-title">What I Produce</h2>
+    <p class="section-subtitle">Done-for-you podcast production, built for authority and inbound</p>
 
-        <div class="work-showcase">
-            <div class="work-image-placeholder">
-                <!-- Replace with a GitHub-hosted image -->
-                <img src="REPLACE_WITH_GITHUB_HOSTED_SERVICE_IMAGE_1" alt="Podcast cover design placeholder">
+    <div class="services-grid">
+        <div class="service-card">
+            <div class="service-icon">
+                <!-- Animated icon placeholder (replace URL) -->
+                <img src="REPLACE_WITH_ANIMATED_ICON_URL_SHOW_STRATEGY" alt="Show strategy icon">
             </div>
-            <div class="work-content">
-                <h3>Your Branded Interview Show</h3>
-                <p>
-                    A founder-led podcast designed to convert attention into trust.
-                    We focus on the conversations your ideal clients actually care about: decisions, trade-offs, lessons,
-                    and the “how it really works” details that position you as the authority.
-                </p>
-                <div class="gallery-placeholder">
-                    <!-- Replace with a GitHub-hosted image or keep as a placeholder block -->
-                    <img src="REPLACE_WITH_GITHUB_HOSTED_PLACEHOLDER_GALLERY_1" alt="Episode gallery placeholder">
-                </div>
-                <a href="#contact" class="button">See if it fits your business &rarr;</a>
+            <div class="service-text">
+                <h3>Show Strategy</h3>
+                <p>Angle, audience, episode structure, and a guest pipeline designed to attract your ideal buyers.</p>
             </div>
         </div>
 
-        <hr>
-
-        <div class="work-showcase">
-            <div class="work-image-placeholder">
-                <img src="REPLACE_WITH_GITHUB_HOSTED_SERVICE_IMAGE_2" alt="Audio editing placeholder">
+        <div class="service-card">
+            <div class="service-icon">
+                <img src="REPLACE_WITH_ANIMATED_ICON_URL_RECORDING" alt="Recording setup icon">
             </div>
-            <div class="work-content">
-                <h3>Editing + Publishing (Done-for-you)</h3>
-                <p>
-                    Clean, premium audio with a tight narrative edit (remove filler, dead air, mistakes), consistent loudness,
-                    and a professional finish. I publish to all major platforms and provide show notes, titles and timestamps.
-                </p>
-                <div class="gallery-placeholder">
-                    <img src="REPLACE_WITH_GITHUB_HOSTED_PLACEHOLDER_GALLERY_2" alt="Workflow placeholder">
-                </div>
-                <a href="#contact" class="button">Get a flat-fee quote &rarr;</a>
+            <div class="service-text">
+                <h3>Remote Recording</h3>
+                <p>Simple setup for you and your guests, plus live troubleshooting so sessions run smoothly.</p>
             </div>
         </div>
 
-        <hr>
-
-        <div class="work-showcase">
-            <div class="work-image-placeholder">
-                <img src="REPLACE_WITH_GITHUB_HOSTED_SERVICE_IMAGE_3" alt="Short clips placeholder">
+        <div class="service-card">
+            <div class="service-icon">
+                <img src="REPLACE_WITH_ANIMATED_ICON_URL_EDITING" alt="Editing icon">
             </div>
-            <div class="work-content">
-                <h3>Repurposed Clips for LinkedIn</h3>
-                <p>
-                    If you want distribution baked in, I’ll cut short clips designed for business audiences — clean captions,
-                    strong hooks, and a consistent branded look. This is how episodes keep working for you between releases.
-                </p>
-                <div class="gallery-placeholder">
-                    <img src="REPLACE_WITH_GITHUB_HOSTED_PLACEHOLDER_GALLERY_3" alt="Clips placeholder">
-                </div>
-                <a href="#contact" class="button">Add clips to your package &rarr;</a>
+            <div class="service-text">
+                <h3>Premium Editing</h3>
+                <p>Clean, tight narrative edits: remove filler, mistakes, dead air; consistent loudness and finish.</p>
             </div>
         </div>
-    </section>
+
+        <div class="service-card">
+            <div class="service-icon">
+                <img src="REPLACE_WITH_ANIMATED_ICON_URL_PUBLISHING" alt="Publishing icon">
+            </div>
+            <div class="service-text">
+                <h3>Publishing</h3>
+                <p>Spotify/Apple/YouTube publishing with titles, show notes, timestamps, and clean metadata.</p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">
+                <img src="REPLACE_WITH_ANIMATED_ICON_URL_CLIPS" alt="Clips icon">
+            </div>
+            <div class="service-text">
+                <h3>Clips for LinkedIn</h3>
+                <p>Short, business-friendly clips with captions and branded templates (optional add-on).</p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">
+                <img src="REPLACE_WITH_ANIMATED_ICON_URL_GUESTS" alt="Guest outreach icon">
+            </div>
+            <div class="service-text">
+                <h3>Guest Outreach Kit</h3>
+                <p>Battle-tested invite templates + a system to keep your guest pipeline full (optional add-on).</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="services-cta">
+        <a href="#contact" class="button">Book a 15-min fit call &rarr;</a>
+    </div>
+</section>
 
     <hr>
 
