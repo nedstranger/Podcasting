@@ -347,9 +347,9 @@
     }
 
     .button:hover {
-      background-color: var(--color-dark);
-      color: var(--color-light);
-      border-color: var(--color-dark);
+      background-color: var(--color-light);
+      color: var(--color-dark);
+      border-color: var(--color-light);
     }
 
     /* --- Footer --- */
@@ -395,7 +395,7 @@
       border: none;
       height: 1px;
       background: rgba(26, 26, 26, 0.1);
-      margin: 0 auto;
+      margin: 6rem auto;
       width: 70%;
     }
 
@@ -750,7 +750,7 @@
   <script>
     // Fade-in effect on scroll
     document.addEventListener("DOMContentLoaded", function () {
-      const sections = document.querySelectorAll('section, hr');
+      const sections = document.querySelectorAll('section');
 
       const sectionObserverOptions = {
         root: null,
