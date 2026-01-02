@@ -591,42 +591,42 @@
 
       <!-- Option: Web3Forms (replace key) -->
       <form action="https://api.web3forms.com/submit" method="post">
-        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE">
-        <input type="hidden" name="subject" value="New inquiry from NedMortimer.com">
+  <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE">
+  <input type="hidden" name="subject" value="New inquiry from NedMortimer.com">
 
-        <div>
-          <label for="full_name">Full Name</label>
-          <input type="text" id="full_name" name="Full Name" required>
-        </div>
+  <div>
+    <label for="email">Email Address</label>
+    <input
+      type="email"
+      id="email"
+      name="Email"
+      placeholder="you@company.com"
+      required>
+  </div>
 
-        <div>
-          <label for="company_org">Company / Website</label>
-          <input type="text" id="company_org" name="Company/Website" required>
-        </div>
+  <div>
+    <label for="subject_line">Subject</label>
+    <input
+      type="text"
+      id="subject_line"
+      name="Subject"
+      placeholder="Podcast production enquiry"
+      required>
+  </div>
 
-        <div>
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="Email" required>
-        </div>
+  <div>
+    <label for="message">Message</label>
+    <textarea
+      id="message"
+      name="Message"
+      placeholder="What do you sell, who do you sell it to, and what would you like the podcast to achieve?"
+      rows="5"
+      required></textarea>
+  </div>
 
-        <div>
-          <label for="inquiry_type">What do you want?</label>
-          <select id="inquiry_type" name="Goal" required>
-            <option value="" disabled selected>-- Select One --</option>
-            <option value="Launch">Launch a podcast from scratch</option>
-            <option value="Produce">Produce/edit an existing show</option>
-            <option value="Repurpose">Repurpose episodes into clips</option>
-            <option value="Unsure">Not sure yet</option>
-          </select>
-        </div>
+  <button type="submit">Send</button>
+</form>
 
-        <div>
-          <label for="message">What do you sell and who is the ideal client?</label>
-          <textarea id="message" name="Message" rows="4" required></textarea>
-        </div>
-
-        <button type="submit">Send</button>
-      </form>
 
       <p style="font-family: var(--font-sans); font-size: 0.9rem; margin-top: 1.5rem; opacity: 0.75; padding: 0 1.25rem;">
         Prefer email? <a href="mailto:hello@nedmortimer.com">hello@nedmortimer.com</a>
