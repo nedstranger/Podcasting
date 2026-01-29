@@ -3,19 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ned Mortimer — Podcast Production for Founders</title>
-  <meta name="description" content="Founder-led interview podcasts that build authority and win high-value clients. End-to-end podcast production for business owners." />
+  <title>Ned Mortimer — Podcast Production for High-Value B2B</title>
+  <meta name="description" content="Founder-led interview podcasts for B2B firms with high-value clients. Quality over audience size. End-to-end podcast production." />
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;700&family=Montserrat:wght@300;400;500;600&display=swap');
 
     :root {
-      /* LIGHT THEME */
       --font-serif: 'Cormorant Garamond', serif;
       --font-sans: 'Montserrat', sans-serif;
-      --color-light: #1A1A1A; /* Main Text / Dark Accent */
-      --color-dark: #F4F4F4;  /* Main Background / Light Accent */
-      --color-accent: #B0A175; /* Gold/Bronze Accent */
+      --color-light: #1A1A1A;
+      --color-dark: #F4F4F4;
+      --color-accent: #B0A175;
     }
 
     * {
@@ -87,8 +86,9 @@
     }
 
     /* First section needs top padding because header is fixed */
-    #about {
+    #hero {
       padding-top: 10rem;
+      text-align: center;
     }
 
     .section-title {
@@ -96,53 +96,36 @@
       font-size: 3.5rem;
       font-weight: 300;
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 1.25rem;
     }
 
     .section-subtitle {
       font-family: var(--font-sans);
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 400;
       text-align: center;
-      margin-bottom: 3rem;
+      margin-bottom: 2.25rem;
       color: var(--color-accent);
       text-transform: uppercase;
       letter-spacing: 2px;
     }
 
-    /* --- About Section --- */
-    #about .bio-flex {
-      display: flex;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    #about .bio-flex-img {
-      flex: 1;
-    }
-
-    #about .bio-flex-img img {
-      width: 100%;
-      height: auto;
-      border-radius: 4px;
-      display: block;
-    }
-
-    #about .bio-flex-text {
-      flex: 2;
-    }
-
-    #about .bio-flex-text h3 {
-      font-family: var(--font-serif);
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    #about .bio-flex-text p {
+    .hero-copy {
+      max-width: 70ch;
+      margin: 0 auto;
       font-family: var(--font-sans);
-      font-size: 1rem;
-      line-height: 1.8;
-      margin-bottom: 1rem;
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: rgba(26, 26, 26, 0.88);
+    }
+
+    .hero-copy strong {
+      color: var(--color-light);
+      font-weight: 600;
+    }
+
+    .hero-cta {
+      margin-top: 2.25rem;
     }
 
     /* --- Services (compact icon list) --- */
@@ -203,9 +186,9 @@
       margin-top: 2.5rem;
     }
 
-    /* --- Podcast ROI section (NEW) --- */
+    /* --- Podcast ROI section --- */
     #roi .roi-sub {
-      max-width: 72ch;
+      max-width: 78ch;
       margin: 0 auto 2.5rem;
       text-align: center;
       font-family: var(--font-sans);
@@ -286,6 +269,46 @@
       font-family: var(--font-sans);
     }
 
+    /* --- Selected Work --- */
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+
+    .work-item {
+      border: 1px solid rgba(26, 26, 26, 0.12);
+      background: rgba(255, 255, 255, 0.65);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    }
+
+    .work-image {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: rgba(26, 26, 26, 0.05);
+      overflow: hidden;
+    }
+
+    .work-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .work-content {
+      padding: 1.6rem 1.6rem 2rem;
+    }
+
+    .work-content h3 {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
     /* --- Process Section (simple) --- */
     .process-grid {
       display: grid;
@@ -321,6 +344,37 @@
       font-size: 0.95rem;
       line-height: 1.7;
       color: rgba(26, 26, 26, 0.85);
+    }
+
+    /* --- About / Human section (photo at bottom) --- */
+    #about .bio-flex {
+      display: flex;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    #about .bio-flex-img { flex: 1; }
+
+    #about .bio-flex-img img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      display: block;
+    }
+
+    #about .bio-flex-text { flex: 2; }
+
+    #about .bio-flex-text h3 {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    #about .bio-flex-text p {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
     }
 
     /* --- Contact Form Section --- */
@@ -482,58 +536,7 @@
       width: 70%;
     }
 
-    /* --- Selected Work --- */
-    .work-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 2.5rem;
-      margin-top: 3rem;
-    }
-
-    .work-item {
-      border: 1px solid rgba(26, 26, 26, 0.12);
-      background: rgba(255, 255, 255, 0.65);
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-    }
-
-    .work-image {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      background: rgba(26, 26, 26, 0.05);
-      overflow: hidden;
-    }
-
-    .work-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .work-content {
-      padding: 1.6rem 1.6rem 2rem;
-    }
-
-    .work-content h3 {
-      font-family: var(--font-serif);
-      font-size: 2rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .work-content .button {
-      margin-top: 1rem;
-    }
-
     /* Responsive */
-    @media (max-width: 768px) {
-      .work-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* --- Responsive --- */
     @media (max-width: 1024px) {
       .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -561,68 +564,56 @@
   <header>
     <div class="logo">Ned Mortimer</div>
     <nav>
-      <a href="#about">About</a>
-      <a href="#roi">Why podcasts work</a> <!-- NEW -->
+      <a href="#hero">Top</a>
+      <a href="#roi">Why podcasts work</a>
       <a href="#services">Services</a>
       <a href="#work">Example Work</a>
       <a href="#process">Process</a>
       <a href="#contact">Book a call</a>
+      <a href="#about">About</a>
     </nav>
   </header>
 
-  <!-- ABOUT -->
-  <section id="about" class="container">
-    <h2 class="section-title">Podcast production for business owners</h2>
-    <p class="section-subtitle">Turn expert conversations into visible credibility.</p>
+  <!-- HERO (NEW TOP SECTION, NO PHOTO) -->
+  <section id="hero" class="container">
+    <h1 class="section-title">Podcasts for high-value B2B</h1>
+    <p class="section-subtitle">Quality of clients, not size of audience</p>
 
-    <div class="bio-flex">
-      <div class="bio-flex-img">
-        <!-- Replace with a GitHub-hosted headshot -->
-        <img src="https://raw.githubusercontent.com/nedstranger/Podcasting/main/Assets/Images/NedMortimer.jpg" alt="Ned Mortimer headshot">
-      </div>
+    <p class="hero-copy">
+      If one contract is worth serious money, you don’t need a big audience.
+      You need the right people to hear you think.
+      I produce founder-led interview podcasts that help B2B firms <strong>win trust</strong>, <strong>open doors</strong>, and <strong>stay top-of-mind</strong>.
+    </p>
 
-      <div class="bio-flex-text">
-        <h3>End-to-end. Flat fee. No hassle.</h3>
-        <p>
-          I help firms with small, high-value client bases build authority by hosting expert interviews their peers are proud to share.
-        </p>
-        <p>
-          I handle the full workflow: positioning, guest outreach templates, remote recording setup, editing,
-          publishing to Spotify/Apple/YouTube, and optional short clips. You show up for the conversation — I do the rest.
-        </p>
-        <p>
-          <strong>No-risk:</strong> if the first episode isn’t publishable to your standard, you don’t release it and you don’t continue.
-        </p>
-        <div style="margin-top: 1.5rem;">
-          <a href="#contact" class="button">Book a 15-min fit call &rarr;</a>
-        </div>
-      </div>
+    <div class="hero-cta">
+      <a href="#contact" class="button">Book a 15-min fit call &rarr;</a>
     </div>
   </section>
 
   <hr>
 
-  <!-- WHY PODCASTS WORK (NEW) -->
+  <!-- WHY PODCASTS WORK -->
   <section id="roi" class="container">
     <h2 class="section-title">Why podcasts work</h2>
-    <p class="section-subtitle">A simple logic chain</p>
+    <p class="section-subtitle">For high-value B2B</p>
 
     <p class="roi-sub">
-      If you sell something expensive, you don’t need thousands of leads. You need the right conversations with the right people.
-      A podcast is a clean way to get those conversations — and turn them into trust that spreads.
+      In high-value B2B, the bottleneck is not “more leads”.
+      It’s access to hard-to-reach decision-makers, and trust once you have their attention.
+      A podcast gives you both — and turns each episode into proof you can send to the next prospect.
     </p>
 
     <div class="roi-grid">
       <div class="roi-card">
         <h3>The logic</h3>
         <ol class="roi-flow">
-          <li>You want access to a small number of hard-to-reach decision-makers.</li>
+          <li>You want conversations with a small number of hard-to-reach decision-makers.</li>
           <li>Cold outreach is easy to ignore.</li>
-          <li>A podcast gives a genuine reason to say “yes” to a conversation.</li>
-          <li>You get 30–60 minutes with them, at your best, on record.</li>
+          <li>A podcast gives a genuine reason to say “yes”.</li>
+          <li>You get 30–60 minutes with them, focused, on record.</li>
           <li>The episode becomes proof: your expertise, standards, and network.</li>
           <li>Guests share it internally and with peers (because it features them).</li>
-          <li>You stay top-of-mind when a contract appears.</li>
+          <li>You stay top-of-mind when a project or contract appears.</li>
         </ol>
       </div>
 
@@ -653,20 +644,19 @@
 
   <hr>
 
-  <!-- SERVICES (COMPACT) -->
+  <!-- SERVICES -->
   <section id="services" class="container">
-    <h2 class="section-title">What I Produce</h2>
-    <p class="section-subtitle">Done-for-you production, built for authority and inbound</p>
+    <h2 class="section-title">What I produce</h2>
+    <p class="section-subtitle">Done-for-you, built for trust</p>
 
     <div class="services-grid">
       <div class="service-card">
         <div class="service-icon">
-          <!-- Animated icon placeholder (GIF/WebP recommended for <img>) -->
           <img src="https://raw.githubusercontent.com/nedstranger/Podcasting/main/Icons/Strategy.svg" alt="Show strategy icon">
         </div>
         <div class="service-text">
           <h3>Show Strategy</h3>
-          <p>Angle, audience, episode structure, and a guest pipeline that attracts the right buyers.</p>
+          <p>Clear angle, tight format, and a guest list designed for the buyers you actually want.</p>
         </div>
       </div>
 
@@ -696,7 +686,7 @@
         </div>
         <div class="service-text">
           <h3>Publishing</h3>
-          <p>Spotify/Apple/YouTube publishing with titles, show notes, and clean metadata.</p>
+          <p>Spotify/Apple/YouTube publishing with clean metadata, titles, and show notes.</p>
         </div>
       </div>
 
@@ -728,13 +718,13 @@
 
   <hr>
 
+  <!-- WORK -->
   <section id="work" class="container">
-    <h2 class="section-title">Podcast Examples</h2>
+    <h2 class="section-title">Podcast examples</h2>
     <p class="section-subtitle">Real work, real audio quality</p>
 
     <div class="work-grid">
 
-      <!-- CLIENT WORK (anchor case study) -->
       <div class="work-item">
         <div class="work-image">
           <img
@@ -761,7 +751,6 @@
         </div>
       </div>
 
-      <!-- PERSONAL PROJECT (clearly labelled) -->
       <div class="work-item">
         <div class="work-image">
           <img
@@ -800,13 +789,13 @@
   <!-- PROCESS -->
   <section id="process" class="container">
     <h2 class="section-title">How it works</h2>
-    <p class="section-subtitle">Simple, repeatable, and predictable</p>
+    <p class="section-subtitle">Simple, repeatable, predictable</p>
 
     <div class="process-grid">
       <div class="process-step">
         <div class="kicker">Step 1</div>
         <h3>Positioning</h3>
-        <p>Define your audience, offer, show angle, and episode format so the podcast drives the right inbound.</p>
+        <p>Define your buyers, show angle, guest list, and format so the podcast supports high-value sales.</p>
       </div>
 
       <div class="process-step">
@@ -824,7 +813,7 @@
       <div class="process-step">
         <div class="kicker">Step 4</div>
         <h3>Publish</h3>
-        <p>Upload, show notes, timestamps, and optional clips—ready to share across channels.</p>
+        <p>Upload, show notes, timestamps, and optional clips—ready to share with prospects.</p>
       </div>
     </div>
 
@@ -844,39 +833,23 @@
         Tell me what you sell, who you sell it to, and what you want the podcast to achieve. I’ll reply with a clear recommendation.
       </p>
 
-      <!-- Option: Web3Forms (replace key) -->
       <form action="https://api.web3forms.com/submit" method="post">
         <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE">
         <input type="hidden" name="subject" value="New inquiry from NedMortimer.com">
 
         <div>
           <label for="email">Email Address</label>
-          <input
-            type="email"
-            id="email"
-            name="Email"
-            placeholder="you@company.com"
-            required>
+          <input type="email" id="email" name="Email" placeholder="you@company.com" required>
         </div>
 
         <div>
           <label for="subject_line">Subject</label>
-          <input
-            type="text"
-            id="subject_line"
-            name="Subject"
-            placeholder="Podcast production enquiry"
-            required>
+          <input type="text" id="subject_line" name="Subject" placeholder="Podcast production enquiry" required>
         </div>
 
         <div>
           <label for="message">Message</label>
-          <textarea
-            id="message"
-            name="Message"
-            placeholder="What do you sell, who do you sell it to, and what would you like the podcast to achieve?"
-            rows="5"
-            required></textarea>
+          <textarea id="message" name="Message" placeholder="What do you sell, who do you sell it to, and what would you like the podcast to achieve?" rows="5" required></textarea>
         </div>
 
         <button type="submit">Send</button>
@@ -888,15 +861,49 @@
     </div>
   </section>
 
+  <hr>
+
+  <!-- ABOUT (MOVED TO BOTTOM, PHOTO HERE) -->
+  <section id="about" class="container">
+    <h2 class="section-title">About</h2>
+    <p class="section-subtitle">A real person, accountable for the work</p>
+
+    <div class="bio-flex">
+      <div class="bio-flex-text">
+        <h3>End-to-end. Flat fee. No hassle.</h3>
+        <p>
+          I produce interview podcasts for B2B firms with small, high-value client bases. The goal is not “going viral”.
+          It’s sounding credible to the exact buyers you want — and making it easy to start conversations with them.
+        </p>
+        <p>
+          I handle positioning, guest outreach templates, remote recording setup, editing, and publishing to Spotify/Apple/YouTube,
+          with optional short clips. You show up for the conversation — I do the rest.
+        </p>
+        <p>
+          <strong>No-risk:</strong> if the first episode isn’t publishable to your standard, you don’t release it and you don’t continue.
+        </p>
+      </div>
+
+      <div class="bio-flex-img">
+        <img src="https://raw.githubusercontent.com/nedstranger/Podcasting/main/Assets/Images/NedMortimer.jpg" alt="Ned Mortimer headshot">
+      </div>
+    </div>
+
+    <div class="services-cta" style="margin-top: 2.25rem;">
+      <a href="#contact" class="button">Book a 15-min fit call &rarr;</a>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer>
     <div class="footer-links">
-      <a href="#about">About</a>
-      <a href="#roi">Why podcasts work</a> <!-- NEW -->
+      <a href="#hero">Top</a>
+      <a href="#roi">Why podcasts work</a>
       <a href="#services">Services</a>
       <a href="#work">Example Work</a>
       <a href="#process">Process</a>
       <a href="#contact">Contact</a>
+      <a href="#about">About</a>
     </div>
     <p>&copy; 2026 Ned Mortimer. All rights reserved.</p>
   </footer>
