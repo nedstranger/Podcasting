@@ -203,6 +203,89 @@
       margin-top: 2.5rem;
     }
 
+    /* --- Podcast ROI section (NEW) --- */
+    #roi .roi-sub {
+      max-width: 72ch;
+      margin: 0 auto 2.5rem;
+      text-align: center;
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      line-height: 1.8;
+      color: rgba(26, 26, 26, 0.85);
+    }
+
+    .roi-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .roi-card {
+      border: 1px solid rgba(26, 26, 26, 0.12);
+      background: rgba(255, 255, 255, 0.65);
+      border-radius: 8px;
+      padding: 1.6rem 1.4rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    }
+
+    .roi-card h3 {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .roi-flow {
+      padding-left: 1.1rem;
+      margin: 0;
+    }
+
+    .roi-flow li {
+      margin: 0.8rem 0;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: rgba(26, 26, 26, 0.85);
+    }
+
+    .roi-points {
+      padding-left: 1.1rem;
+      margin: 0 0 1.2rem;
+    }
+
+    .roi-points li {
+      margin: 0.8rem 0;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: rgba(26, 26, 26, 0.85);
+    }
+
+    .roi-micro {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 0.6rem;
+    }
+
+    .roi-pill {
+      display: inline-block;
+      padding: 0.55rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid rgba(26, 26, 26, 0.14);
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 0.9rem;
+      background: rgba(244, 244, 244, 0.6);
+    }
+
+    .roi-arrow {
+      opacity: 0.55;
+      font-weight: 600;
+      font-family: var(--font-sans);
+    }
+
     /* --- Process Section (simple) --- */
     .process-grid {
       display: grid;
@@ -400,61 +483,61 @@
     }
 
     /* --- Selected Work --- */
-.work-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2.5rem;
-  margin-top: 3rem;
-}
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
 
-.work-item {
-  border: 1px solid rgba(26, 26, 26, 0.12);
-  background: rgba(255, 255, 255, 0.65);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-}
+    .work-item {
+      border: 1px solid rgba(26, 26, 26, 0.12);
+      background: rgba(255, 255, 255, 0.65);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    }
 
-.work-image {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  background: rgba(26, 26, 26, 0.05);
-  overflow: hidden;
-}
+    .work-image {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: rgba(26, 26, 26, 0.05);
+      overflow: hidden;
+    }
 
-.work-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+    .work-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
-.work-content {
-  padding: 1.6rem 1.6rem 2rem;
-}
+    .work-content {
+      padding: 1.6rem 1.6rem 2rem;
+    }
 
-.work-content h3 {
-  font-family: var(--font-serif);
-  font-size: 2rem;
-  margin-bottom: 0.75rem;
-}
+    .work-content h3 {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
 
-.work-content .button {
-  margin-top: 1rem;
-}
+    .work-content .button {
+      margin-top: 1rem;
+    }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .work-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
+    /* Responsive */
+    @media (max-width: 768px) {
+      .work-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
     /* --- Responsive --- */
     @media (max-width: 1024px) {
       .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .roi-grid { grid-template-columns: 1fr; }
       #about .bio-flex {
         flex-direction: column;
         gap: 2rem;
@@ -479,6 +562,7 @@
     <div class="logo">Ned Mortimer</div>
     <nav>
       <a href="#about">About</a>
+      <a href="#roi">Why podcasts work</a> <!-- NEW -->
       <a href="#services">Services</a>
       <a href="#work">Example Work</a>
       <a href="#process">Process</a>
@@ -509,6 +593,57 @@
         <p>
           <strong>No-risk:</strong> if the first episode isn’t publishable to your standard, you don’t release it and you don’t continue.
         </p>
+        <div style="margin-top: 1.5rem;">
+          <a href="#contact" class="button">Book a 15-min fit call &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- WHY PODCASTS WORK (NEW) -->
+  <section id="roi" class="container">
+    <h2 class="section-title">Why podcasts work</h2>
+    <p class="section-subtitle">A simple logic chain</p>
+
+    <p class="roi-sub">
+      If you sell something expensive, you don’t need thousands of leads. You need the right conversations with the right people.
+      A podcast is a clean way to get those conversations — and turn them into trust that spreads.
+    </p>
+
+    <div class="roi-grid">
+      <div class="roi-card">
+        <h3>The logic</h3>
+        <ol class="roi-flow">
+          <li>You want access to a small number of hard-to-reach decision-makers.</li>
+          <li>Cold outreach is easy to ignore.</li>
+          <li>A podcast gives a genuine reason to say “yes” to a conversation.</li>
+          <li>You get 30–60 minutes with them, at your best, on record.</li>
+          <li>The episode becomes proof: your expertise, standards, and network.</li>
+          <li>Guests share it internally and with peers (because it features them).</li>
+          <li>You stay top-of-mind when a contract appears.</li>
+        </ol>
+      </div>
+
+      <div class="roi-card">
+        <h3>What you’re really buying</h3>
+        <ul class="roi-points">
+          <li><strong>Warm introductions</strong> without asking for favours</li>
+          <li><strong>Credibility</strong> without “selling”</li>
+          <li><strong>Proof assets</strong> you can send to any prospect</li>
+        </ul>
+
+        <div class="roi-micro" aria-label="Access leads to trust, referrals, and revenue">
+          <span class="roi-pill">Access</span>
+          <span class="roi-arrow">→</span>
+          <span class="roi-pill">Trust</span>
+          <span class="roi-arrow">→</span>
+          <span class="roi-pill">Referrals</span>
+          <span class="roi-arrow">→</span>
+          <span class="roi-pill">Revenue</span>
+        </div>
+
         <div style="margin-top: 1.5rem;">
           <a href="#contact" class="button">Book a 15-min fit call &rarr;</a>
         </div>
@@ -591,94 +726,77 @@
     </div>
   </section>
 
-<hr>
+  <hr>
 
-<section id="work" class="container">
-  <h2 class="section-title">Podcast Examples</h2>
-  <p class="section-subtitle">Real work, real audio quality</p>
+  <section id="work" class="container">
+    <h2 class="section-title">Podcast Examples</h2>
+    <p class="section-subtitle">Real work, real audio quality</p>
 
-  <div class="work-grid">
+    <div class="work-grid">
 
-    <!-- CLIENT WORK (anchor case study) -->
-    <div class="work-item">
-      <div class="work-image">
-        <img
-          src="https://raw.githubusercontent.com/nedstranger/Podcasting/main/Assets/Images/Sprinkle.png"
-          alt="Sprinkle podcast artwork">
-      </div>
+      <!-- CLIENT WORK (anchor case study) -->
+      <div class="work-item">
+        <div class="work-image">
+          <img
+            src="https://raw.githubusercontent.com/nedstranger/Podcasting/main/Assets/Images/Sprinkle.png"
+            alt="Sprinkle podcast artwork">
+        </div>
 
-      <div class="work-content">
-        <h3>Client work: Sprinkle</h3>
+        <div class="work-content">
+          <h3>Client work: Sprinkle</h3>
 
-        <p style="font-family: var(--font-sans); font-size: 0.95rem; line-height: 1.7; color: rgba(26,26,26,0.85); margin-bottom: 1rem;">
-          Aviation-focused interview series. Produced end-to-end under the client’s name (format, recording, editing, publishing).
-        </p>
+          <p style="font-family: var(--font-sans); font-size: 0.95rem; line-height: 1.7; color: rgba(26,26,26,0.85); margin-bottom: 1rem;">
+            Aviation-focused interview series. Produced end-to-end under the client’s name (format, recording, editing, publishing).
+          </p>
 
-        <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
-          <a
-            href="https://sprinkle.com/journal/post/he-walked-into-a-hangar-with-1-500-and-a-dream-38-years-later-he-s-one-of-aviation-s-most-seasoned-brokers-david-welch-avaquire"
-            target="_blank"
-            rel="noopener"
-            class="button">
-            Listen →
-          </a>
-
-          <a
-            href="https://sprinkle.com/journal/post/inside-the-mind-of-the-uk-s-most-unusual-aircraft-dealer-andrew-freeman-europlane-sales"
-            target="_blank"
-            rel="noopener"
-            class="button">
-            View →
-          </a>
+          <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+            <a
+              href="https://sprinkle.com/journal/post/he-walked-into-a-hangar-with-1-500-and-a-dream-38-years-later-he-s-one-of-aviation-s-most-seasoned-brokers-david-welch-avaquire"
+              target="_blank"
+              rel="noopener"
+              class="button">
+              Listen →
+            </a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- PERSONAL PROJECT (clearly labelled) -->
-    <div class="work-item">
-      <div class="work-image">
-        <img
-          src="https://raw.githubusercontent.com/nedstranger/Podcasting/main/Assets/Images/PolyRiskReward.png"
-          alt="Personal podcast artwork">
-      </div>
+      <!-- PERSONAL PROJECT (clearly labelled) -->
+      <div class="work-item">
+        <div class="work-image">
+          <img
+            src="https://raw.githubusercontent.com/nedstranger/Podcasting/main/Assets/Images/PolyRiskReward.png"
+            alt="Personal podcast artwork">
+        </div>
 
-      <div class="work-content">
-        <h3>Personal project</h3>
+        <div class="work-content">
+          <h3>Personal project</h3>
 
-        <p style="font-family: var(--font-sans); font-size: 0.95rem; line-height: 1.7; color: rgba(26,26,26,0.85); margin-bottom: 1rem;">
-          Different subject matter, but a useful reference for production quality, pacing, and editorial standards.
-        </p>
+          <p style="font-family: var(--font-sans); font-size: 0.95rem; line-height: 1.7; color: rgba(26,26,26,0.85); margin-bottom: 1rem;">
+            Different subject matter, but a useful reference for production quality, pacing, and editorial standards.
+          </p>
 
-        <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
-          <a
-            href="https://open.spotify.com/show/3ABayVqYtDzj9qvRqpatR2?si=31a9b675b33940cd"
-            target="_blank"
-            rel="noopener"
-            class="button">
-            Listen →
-          </a>
-
-          <a
-            href="https://polyriskreward.com"
-            target="_blank"
-            rel="noopener"
-            class="button">
-            View →
-          </a>
+          <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+            <a
+              href="https://open.spotify.com/show/3ABayVqYtDzj9qvRqpatR2?si=31a9b675b33940cd"
+              target="_blank"
+              rel="noopener"
+              class="button">
+              Listen →
+            </a>
+          </div>
         </div>
       </div>
+
     </div>
 
-  </div>
-
-  <p style="font-family: var(--font-sans); font-size: 0.9rem; opacity: 0.75; text-align: center; margin-top: 2.25rem;">
-    Currently working with a small number of clients to ensure quality and focus.
-  </p>
-</section>
-
+    <p style="font-family: var(--font-sans); font-size: 0.9rem; opacity: 0.75; text-align: center; margin-top: 2.25rem;">
+      Currently working with a small number of clients to ensure quality and focus.
+    </p>
+  </section>
 
   <hr>
-  
+
   <!-- PROCESS -->
   <section id="process" class="container">
     <h2 class="section-title">How it works</h2>
@@ -728,42 +846,41 @@
 
       <!-- Option: Web3Forms (replace key) -->
       <form action="https://api.web3forms.com/submit" method="post">
-  <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE">
-  <input type="hidden" name="subject" value="New inquiry from NedMortimer.com">
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE">
+        <input type="hidden" name="subject" value="New inquiry from NedMortimer.com">
 
-  <div>
-    <label for="email">Email Address</label>
-    <input
-      type="email"
-      id="email"
-      name="Email"
-      placeholder="you@company.com"
-      required>
-  </div>
+        <div>
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            name="Email"
+            placeholder="you@company.com"
+            required>
+        </div>
 
-  <div>
-    <label for="subject_line">Subject</label>
-    <input
-      type="text"
-      id="subject_line"
-      name="Subject"
-      placeholder="Podcast production enquiry"
-      required>
-  </div>
+        <div>
+          <label for="subject_line">Subject</label>
+          <input
+            type="text"
+            id="subject_line"
+            name="Subject"
+            placeholder="Podcast production enquiry"
+            required>
+        </div>
 
-  <div>
-    <label for="message">Message</label>
-    <textarea
-      id="message"
-      name="Message"
-      placeholder="What do you sell, who do you sell it to, and what would you like the podcast to achieve?"
-      rows="5"
-      required></textarea>
-  </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="Message"
+            placeholder="What do you sell, who do you sell it to, and what would you like the podcast to achieve?"
+            rows="5"
+            required></textarea>
+        </div>
 
-  <button type="submit">Send</button>
-</form>
-
+        <button type="submit">Send</button>
+      </form>
 
       <p style="font-family: var(--font-sans); font-size: 0.9rem; margin-top: 1.5rem; opacity: 0.75; padding: 0 1.25rem;">
         Prefer email? <a href="mailto:hello@nedmortimer.com">hello@nedmortimer.com</a>
@@ -775,6 +892,7 @@
   <footer>
     <div class="footer-links">
       <a href="#about">About</a>
+      <a href="#roi">Why podcasts work</a> <!-- NEW -->
       <a href="#services">Services</a>
       <a href="#work">Example Work</a>
       <a href="#process">Process</a>
